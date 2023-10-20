@@ -2,12 +2,12 @@
     {
       "id": 1,
       "brand_name": "L'Oréal Brand",
-      "brand_image": "https://i.ibb.co/Fm0LSvc/Loreal-Brand.png"
+      "brand_image": "https://i.ibb.co/hfYndr3/Loreal-Logo.png"
     },
     {
       "id": 2,
       "brand_name": "Revlon Brand",
-      "brand_image": "https://i.ibb.co/yky2rG9/Revlon-Cosmetics.jpg"
+      "brand_image": "https://i.ibb.co/4Y8kJwV/Revlon-Logo.jpg"
     },
     {
       "id": 3,
@@ -27,7 +27,7 @@
     {
       "id": 6,
       "brand_name": "Dior Brand",
-      "brand_image": "https://i.ibb.co/TvMJnvY/dior.jpg"
+      "brand_image": "https://i.ibb.co/1mdm2gw/Dior-logo.png"
     }
   ]
   
