@@ -28,6 +28,32 @@ async function run() {
 
     const productCollection = client.db("ProductDB").collection('prducts');
 
+    app.get('/brands', (req, res) =>{
+        res.send(datas)
+    })
+    
+    app.get('/brands/:id', (req, res)=>{
+        const id = parseInt(req.params.id);
+        // console.log('i need data for id:', id);
+        const brand = datas.find(brand => brand.id === id) || {};
+        res.send(brand);
+    })
+
+    app.get('/products', async(req,res)=>{
+        const cursor = productCollection.find()
+        const result = await cursor.toArray()
+        res.send(result)
+    })
+
+    app.get("/products/:brand", async(req, res) =>{
+        const brandName = req.params.brand;
+        const query = {brand: (brandName)};
+        const cursor = productCollection.find(query);
+        const result = await cursor.toArray();
+        res.send(result);
+    })
+
+
     app.post('/products', async(req,res)=>{
         const newProduct = req.body;
         console.log(newProduct);
@@ -48,16 +74,7 @@ run().catch(console.dir);
 
 
 
-app.get('/brands', (req, res) =>{
-    res.send(datas)
-})
 
-app.get('/brands/:id', (req, res)=>{
-    const id = parseInt(req.params.id);
-    console.log('i need data for id:', id);
-    const brand = datas.find(brand => brand.id === id) || {};
-    res.send(brand);
-})
 
 app.get('/', (req, res)=>{
     res.send('Brand Shop is Running');
